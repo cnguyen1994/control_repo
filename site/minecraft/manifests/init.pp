@@ -8,7 +8,7 @@ class minecraft {
   }
   file {'/opt/minecraft/server.jar':
     ensure => file,
-    mode   => 0755,
+    mode   => '0755',
     source => Exec["retrieve_server"],
   }
   package {'java':
