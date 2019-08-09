@@ -1,10 +1,13 @@
 class minecraft {
+  include vcsrepo
   file {'/opt/minecraft':
     ensure => directory,
   }
-  exec {'retrieve_server':
-    command => '/usr/bin/wget -q https://launcher.mojang.com/v1/objects/3dc3d84a581f14691199cf6831b71ed1296a9fdf/server.jar -O /opt/minecraft/server.jar',
-    creates => '/opt/minecraft/server.jar',
+  vcsrepo { '/opt/minecraft/server.jar':
+    ensure   => present,
+    provider => wget,
+    source   => 'https://github.com/technomancy/leiningen.git',
+    revision => 'stable',
   }
   file {'/opt/minecraft/server.jar':
     ensure => file,
