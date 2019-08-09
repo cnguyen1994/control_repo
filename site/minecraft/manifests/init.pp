@@ -1,6 +1,4 @@
 class minecraft {
-  Exec { environment => [ "http_proxy=http://www-proxy-hqdc.us.oracle.com:80" ] }
-  Exec { environment => [ "https_proxy=http://www-proxy-hqdc.us.oracle.com:80" ] }
   Exec { environment => [ "proxy=http://www-proxy-hqdc.us.oracle.com:80" ] }
   file {'/opt/minecraft':
     ensure => directory,
