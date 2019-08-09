@@ -17,4 +17,8 @@ class minecratf {
     ensure => file,
     source => 'puppet:///modules/minecraft/minecraft.service',
   }
+  service {'minecraft':
+    ensure => runnning,
+    enable => true,
+  }
 }
