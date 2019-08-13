@@ -7,7 +7,7 @@ class minecraft (
     ensure => directory,
   }
   exec { 'Set Proxy': 
-    command => "echo "export http_proxy=${proxy_url} && export https_proxy=${proxy_url} && export proxy=${proxy_url}" >> ~/.bashrc && source ~/.bashrc && curl ${url} -o ${install_dir}/server.jar", 
+    command => "echo \"export http_proxy=${proxy_url} && export https_proxy=${proxy_url} && export proxy=${proxy_url}\" >> ~/.bashrc && source ~/.bashrc && curl ${url} -o ${install_dir}/server.jar", 
     path    => ['/usr/bin', '/usr/sbin',],
    }
   file {"${install_dir}/server.jar":
