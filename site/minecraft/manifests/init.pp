@@ -1,7 +1,8 @@
-class minecraft {
+class minecraft (
   $url = 'https://launcher.mojang.com/v1/objects/3dc3d84a581f14691199cf6831b71ed1296a9fdf/server.jar'
   $proxy_url = 'http://www-proxy-hqdc.us.oracle.com:80'
   $install_dir = '/opt/minecraft'
+){
   file {$install_dir:
     ensure => directory,
   }
