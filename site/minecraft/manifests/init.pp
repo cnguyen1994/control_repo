@@ -1,6 +1,6 @@
 class minecraft {
   exec { 'Set Proxy': 
-    command => 'echo "export http_proxy=http://www-proxy-hqdc.us.oracle.com:80 && export https_proxy=http://www-proxy-hqdc.us.oracle.com:80 && export proxy=http://www-proxy-hqdc.us.oracle.com:80" >> ~/.bashrc', 
+    command => 'echo "export http_proxy=http://www-proxy-hqdc.us.oracle.com:80 && export https_proxy=http://www-proxy-hqdc.us.oracle.com:80 && export proxy=http://www-proxy-hqdc.us.oracle.com:80" >> ~/.bashrc && source ~/.bashrc', 
     path    => ['/usr/bin', '/usr/sbin',],
    }
   file {'/opt/minecraft':
